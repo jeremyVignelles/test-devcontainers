@@ -1,0 +1,12 @@
+###> inetum-orleans/docker-devbox ###
+/*ddb.local.*
+/.bin/node
+/.bin/npm
+/.bin/npx
+/docker-compose.yml
+/.docker/node/Dockerfile
+/.docker/node/fixuid.tar.gz
+/.certs/test-devcontainers.test.key
+/.certs/test-devcontainers.test.crt
+/.certs/.signer.crt
+###< inetum-orleans/docker-devbox ###

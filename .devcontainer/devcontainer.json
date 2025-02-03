@@ -1,0 +1,40 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/marcosgomesneto/bun-devcontainers/tree/main/src/basic-bun
+{
+    "name": "TestDevbox",
+    "dockerFile": "Dockerfile",
+    // Configure tool-specific properties.
+    "customizations": {
+      // Configure properties specific to VS Code.
+      "vscode": {
+        // Add the IDs of extensions you want installed when the container is created.
+        "extensions": [
+          "ms-azuretools.vscode-docker",
+          "Grafana.vscode-jsonnet"
+        ],
+        "settings": {
+          "jsonnet.languageServer.jpath": [
+            "/home/vscode/.docker-devbox/ddb/ddb/feature/jsonnet/lib"
+          ],
+          "jsonnet.languageServer.tankaMode": false,
+          "[jsonnet]": {
+              "editor.formatOnSave": true,
+              "editor.defaultFormatter": "Grafana.vscode-jsonnet"
+          }
+        }
+      }
+    },
+    "remoteUser": "vscode",
+    "remoteEnv": {
+      "PATH": "${containerEnv:PATH}:/home/vscode/.docker-devbox/bin"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    },
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
+    "mounts": [
+      "source=${localEnv:HOME}/.ssh/id_rsa.pub,target=/home/vscode/.ssh/id_rsa.pub,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/.docker-devbox,target=/home/vscode/.docker-devbox,type=bind,consistency=cached"
+    ]
+  }

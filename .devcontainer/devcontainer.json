@@ -34,7 +34,7 @@
     "workspaceFolder": "${localWorkspaceFolder}",
     "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind",
     "mounts": [
-      "source=${localEnv:HOME}/.ssh/id_rsa.pub,target=/home/vscode/.ssh/id_rsa.pub,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
       "source=${localEnv:HOME}/.docker-devbox,target=/home/vscode/.docker-devbox,type=bind,consistency=cached"
     ]
   }
